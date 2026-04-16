@@ -23,7 +23,7 @@ export default function KaisPage() {
         primaryCta={{ label: 'Request KAIS Briefing', href: '/contact' }}
         secondaryCta={{ label: 'Contact Qordova', href: '/contact' }}
         signals={['Permit-bound execution','Fail-closed enforcement','Cryptographic audit chain','ORION as sole permit authority']}
-        minHeight="88svh"
+        minHeight="76svh"
       />
 
       {/* Core architecture */}

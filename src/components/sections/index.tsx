@@ -56,7 +56,7 @@ interface SectionHeaderProps {
 }
 export function SectionHeader({ label, heading, body, centered }: SectionHeaderProps) {
   return (
-    <div className={`mb-[clamp(40px,5vw,64px)] ${centered ? 'text-center' : ''}`}>
+    <div className={`mb-[clamp(24px,3vw,44px)] ${centered ? 'text-center' : ''}`}>
       <SectionLabel>{label}</SectionLabel>
       <GoldRule />
       <SectionHeading>{heading}</SectionHeading>
@@ -86,7 +86,7 @@ export function CardGrid({ items, cols = 3 }: CardGridProps) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="group relative bg-[#111113] p-[clamp(28px,3vw,44px)] overflow-hidden transition-colors duration-200 hover:bg-[#161618]"
+          className="group relative bg-[#111113] p-[clamp(20px,2.2vw,32px)] overflow-hidden transition-colors duration-200 hover:bg-[#161618]"
         >
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#C9A84C] scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
           {item.num && (
@@ -100,7 +100,7 @@ export function CardGrid({ items, cols = 3 }: CardGridProps) {
           <div className="font-serif text-[#EFEFEA] leading-[1.25] mb-3" style={{ fontSize: 'clamp(18px,1.8vw,24px)' }}>
             {item.title}
           </div>
-          <p className="text-[13px] font-light text-[#606062] leading-[1.72]">{item.body}</p>
+          <p className="text-[13px] font-light text-[#909090] leading-[1.72]">{item.body}</p>
         </div>
       ))}
     </div>
@@ -116,11 +116,11 @@ export function PostureGrid({ items }: PostureGridProps) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="group bg-[#111113] p-7 transition-colors duration-200 hover:bg-[#161618]"
+          className="group bg-[#111113] p-[20px_18px] transition-colors duration-200 hover:bg-[#161618]"
         >
           <div className="w-5 h-px bg-[#C9A84C] mb-4 transition-all duration-300 group-hover:w-9" aria-hidden="true" />
           <div className="text-[14px] font-normal text-[#EFEFEA] leading-[1.3] mb-2">{item.title}</div>
-          {item.desc && <p className="text-[12px] font-light text-[#606062] leading-[1.6]">{item.desc}</p>}
+          {item.desc && <p className="text-[12px] font-light text-[#909090] leading-[1.6]">{item.desc}</p>}
         </div>
       ))}
     </div>
@@ -136,7 +136,7 @@ export function ListSection({ items }: ListSectionProps) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-3 sm:gap-12 p-7 sm:px-0 sm:py-7 border-b border-[#272729] transition-colors hover:bg-[#161618]"
+          className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-3 sm:gap-12 p-5 sm:px-0 sm:py-5 border-b border-[#272729] transition-colors hover:bg-[#161618]"
         >
           <div>
             <div className="font-mono text-[9px] tracking-[0.18em] uppercase text-[#C9A84C] mb-2">{item.num}</div>
@@ -144,7 +144,7 @@ export function ListSection({ items }: ListSectionProps) {
               {item.title}
             </div>
           </div>
-          <p className="text-[14px] font-light text-[#606062] leading-[1.72] sm:pt-[26px]">{item.body}</p>
+          <p className="text-[14px] font-light text-[#909090] leading-[1.72] sm:pt-[22px]">{item.body}</p>
         </div>
       ))}
     </div>
@@ -155,18 +155,18 @@ export function ListSection({ items }: ListSectionProps) {
 interface StatementBlockProps { quote: string; points: string[] }
 export function StatementBlock({ quote, points }: StatementBlockProps) {
   return (
-    <div className="border-l-2 border-[#C9A84C] pl-[clamp(24px,3vw,40px)]">
+    <div className="border-l-2 border-[#C9A84C] pl-[clamp(18px,2vw,32px)]">
       <p
-        className="font-serif font-light italic text-[#EFEFEA] leading-[1.38] mb-7"
-        style={{ fontSize: 'clamp(22px,2.5vw,36px)' }}
+        className="font-serif font-light italic text-[#EFEFEA] leading-[1.42] mb-5"
+        style={{ fontSize: 'clamp(20px,2.2vw,30px)' }}
       >
         &ldquo;{quote}&rdquo;
       </p>
       <div className="flex flex-col border-t border-[#272729]">
         {points.map((pt, i) => (
-          <div key={i} className="flex items-start gap-4 py-4 border-b border-[#272729]">
+          <div key={i} className="flex items-start gap-4 py-3 border-b border-[#272729]">
             <span className="w-1 h-1 rounded-full bg-[#C9A84C] flex-shrink-0 mt-[7px]" aria-hidden="true" />
-            <span className="text-[14px] font-light text-[#B8B8B2] leading-[1.7]">{pt}</span>
+            <span className="text-[14px] font-light text-[#EFEFEA] leading-[1.68]">{pt}</span>
           </div>
         ))}
       </div>
@@ -183,7 +183,7 @@ export function DeliverList({ items }: DeliverListProps) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="flex items-center gap-5 px-7 py-[18px] border-b border-[#272729] last:border-b-0 transition-colors hover:bg-[#161618]"
+          className="flex items-center gap-5 px-6 py-[14px] border-b border-[#272729] last:border-b-0 transition-colors hover:bg-[#161618]"
         >
           <span className="font-mono text-[9px] tracking-[0.18em] uppercase text-[#C9A84C] flex-shrink-0 w-6">{item.num}</span>
           <span className="text-[13.5px] font-light text-[#B8B8B2] leading-[1.5]">{item.text}</span>
@@ -202,7 +202,7 @@ export function PlatformPair({ blocks }: PlatformPairProps) {
       {blocks.map((b, i) => (
         <div
           key={i}
-          className="group relative bg-[#111113] p-[clamp(32px,4vw,52px)] overflow-hidden transition-colors hover:bg-[#161618]"
+          className="group relative bg-[#111113] p-[clamp(24px,3vw,40px)] overflow-hidden transition-colors hover:bg-[#161618]"
         >
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#C9A84C] scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
           <div className="font-mono text-[9px] tracking-[0.22em] uppercase text-[#C9A84C] mb-5">{b.tag}</div>
@@ -226,10 +226,10 @@ export function IdentityStack({ items }: IdentityStackProps) {
   return (
     <div className="flex flex-col gap-px bg-[#272729] border border-[#272729]">
       {items.map((item, i) => (
-        <div key={i} className="bg-[#111113] p-7 sm:p-8">
-          <div className="font-mono text-[9px] tracking-[0.22em] uppercase text-[#C9A84C] mb-2.5">{item.tag}</div>
-          <div className="font-serif font-light text-[#EFEFEA] leading-none mb-2.5" style={{ fontSize: 'clamp(22px,2.5vw,32px)' }}>{item.name}</div>
-          <p className="text-[13px] font-light text-[#606062] leading-[1.65]">{item.desc}</p>
+        <div key={i} className="bg-[#111113] p-5 sm:p-6">
+          <div className="font-mono text-[9px] tracking-[0.22em] uppercase text-[#C9A84C] mb-2">{item.tag}</div>
+          <div className="font-serif font-light text-[#EFEFEA] leading-none mb-2" style={{ fontSize: 'clamp(22px,2.5vw,32px)' }}>{item.name}</div>
+          <p className="text-[13px] font-light text-[#909090] leading-[1.65]">{item.desc}</p>
         </div>
       ))}
     </div>
@@ -269,9 +269,9 @@ function FAQItemRow({ item, index, blockId, isOpen, onToggle }: {
           onClick={() => onToggle(index)}
           aria-expanded={isOpen}
           aria-controls={id}
-          className="w-full flex items-center justify-between gap-6 py-[22px] text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] rounded-[2px]"
+          className="w-full flex items-center justify-between gap-6 py-[16px] text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] rounded-[2px]"
         >
-          <span className={`text-[15px] font-light leading-[1.45] transition-colors duration-200 ${isOpen ? 'text-[#EFEFEA]' : 'text-[#B8B8B2] group-hover:text-[#EFEFEA]'}`}>
+          <span className={`text-[15px] font-light leading-[1.45] transition-colors duration-200 ${isOpen ? 'text-[#C9A84C]' : 'text-[#B8B8B2] group-hover:text-[#EFEFEA]'}`}>
             {item.q}
           </span>
           <span
@@ -291,8 +291,8 @@ function FAQItemRow({ item, index, blockId, isOpen, onToggle }: {
         className="overflow-hidden transition-all duration-300"
         style={{ height: isOpen ? `${height}px` : '0px', opacity: isOpen ? 1 : 0 }}
       >
-        <div ref={answerRef} className="pb-[22px]">
-          <p className="text-[14px] font-light text-[#606062] leading-[1.75] max-w-[680px]">{item.a}</p>
+        <div ref={answerRef} className="pb-[18px]">
+          <p className="text-[14px] font-light text-[#909090] leading-[1.75] max-w-[680px]">{item.a}</p>
         </div>
       </dd>
     </div>
@@ -329,9 +329,10 @@ interface FinalCTAProps {
   secondaryCta: CtaLinkProps
   layout?:     'centred' | 'split'
 }
-export function FinalCTA({ headline, primaryCta, secondaryCta, layout = 'centred' }: FinalCTAProps) {  const isSplit = layout === 'split'
+export function FinalCTA({ headline, primaryCta, secondaryCta, layout = 'centred' }: FinalCTAProps) {
+  const isSplit = layout === 'split'
   return (
-    <section className="relative overflow-hidden border-t border-[#272729]" style={{ padding: 'clamp(80px,10vw,140px) 0' }}>
+    <section className="relative overflow-hidden border-t border-[#272729]" style={{ padding: 'clamp(48px,5vw,72px) 0' }}>
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
         style={{ width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(201,168,76,.06) 0%, transparent 70%)' }}
@@ -371,7 +372,7 @@ export function StagingNotice() {
         Notice
       </span>
       <p className="font-mono text-[11px] tracking-[0.04em] text-[#606062] leading-[1.65]">
-        Preliminary staging text only. Full legal documentation will be published before commercial launch.
+        Staging version — preliminary text only. This page is not a final legal instrument. Full documentation will be published before commercial launch or public data collection.
       </p>
     </div>
   )
@@ -384,7 +385,7 @@ export function SectionCallouts({ items }: SectionCalloutsProps) {
   return (
     <div className="flex flex-col border-t border-[#272729]">
       {items.map((item, i) => (
-        <div key={i} className="flex items-baseline gap-4 py-[17px] border-b border-[#272729]">
+        <div key={i} className="flex items-baseline gap-4 py-[13px] border-b border-[#272729]">
           <span
             className="text-[14px] flex-shrink-0 w-5"
             style={{ color: item.affirm ? '#C9A84C' : 'rgba(250,250,250,0.18)' }}

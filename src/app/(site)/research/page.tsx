@@ -17,7 +17,7 @@ export default function ResearchPage() {
         primaryCta={{ label: 'Discuss Research and Architecture', href: '/contact' }}
         secondaryCta={{ label: 'Back to Home', href: '/' }}
         signals={['Execution design','Control plane architecture','Auditability','Long-horizon methods']}
-        minHeight="88svh"
+        minHeight="76svh"
       />
       <section className="section bg-[#111113]">
         <div className="container">

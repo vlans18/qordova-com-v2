@@ -17,7 +17,7 @@ export default function GovernancePage() {
         primaryCta={{ label: 'Discuss Your Governance Model', href: '/contact' }}
         secondaryCta={{ label: 'Back to Home', href: '/' }}
         signals={['Authority model','Review boundaries','Execution conditions','Auditability']}
-        minHeight="88svh"
+        minHeight="76svh"
       />
       <section className="section bg-[#111113]">
         <div className="container">

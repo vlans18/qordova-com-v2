@@ -21,7 +21,7 @@ export default function AboutPage() {
         primaryCta={{ label: 'Discuss Enterprise Architecture', href: '/contact' }}
         secondaryCta={{ label: 'Contact Qordova', href: '/contact' }}
         signals={['Parent company','Singapore','Flagship: KAIS','Authority: ORION']}
-        minHeight="88svh"
+        minHeight="76svh"
       />
 
       {/* Company structure */}

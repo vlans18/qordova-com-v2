@@ -17,7 +17,7 @@ export default function SolutionsPage() {
         primaryCta={{ label: 'Discuss Your Environment', href: '/contact' }}
         secondaryCta={{ label: 'Back to Home', href: '/' }}
         signals={['Execution control','Policy enforcement','Traceable output','Audit visibility']}
-        minHeight="88svh"
+        minHeight="76svh"
       />
       <section className="section bg-[#111113]">
         <div className="container">

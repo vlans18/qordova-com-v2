@@ -22,7 +22,7 @@ export default function ContactPage() {
         subhead="Qordova Labs Inc engages with organizations that need governed AI infrastructure, explicit control boundaries, and a clear operating model for AI execution."
         primaryCta={{ label: 'Request Enterprise Briefing', href: 'mailto:enterprise@qordova.com' }}
         secondaryCta={{ label: 'Back to Qordova', href: '/' }}
-        minHeight="72svh"
+        minHeight="65svh"
       />
 
       {/* Contact addresses */}

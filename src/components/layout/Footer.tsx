@@ -12,13 +12,13 @@ export default function Footer() {
       role="contentinfo"
       aria-label="Site footer"
     >
-      <div className="container py-16 md:py-20">
+      <div className="container py-14 md:py-16">
 
         {/* Top — brand + nav */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 md:gap-16 pb-12 border-b border-[#1D1D20] mb-7">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-14 pb-10 border-b border-[#272729] mb-6">
 
           {/* Brand block */}
-          <div className="flex flex-col gap-4 max-w-[300px]">
+          <div className="flex flex-col gap-3 max-w-[260px]">
             <Link
               href="/"
               className="flex flex-col gap-[3px] w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] rounded-[2px]"
@@ -31,19 +31,19 @@ export default function Footer() {
                 Governed AI Infrastructure for Enterprise
               </span>
             </Link>
-            <p className="text-[13px] font-light text-[#606062] leading-relaxed">
+            <p className="text-[13px] font-light text-[#909090] leading-[1.6]">
               Qordova Labs Inc is the parent company. KAIS is its flagship governed AI execution platform for enterprise and regulated environments.
             </p>
           </div>
 
-          {/* Nav */}
+          {/* Nav — no active state, hover only */}
           <nav aria-label="Footer navigation">
             <ul className="grid grid-cols-2 sm:grid-cols-1 gap-x-10 gap-y-0">
               {FOOTER_NAV.map(({ label, href }) => (
                 <li key={href}>
                   <Link
                     href={href}
-                    className="inline-block py-2 font-mono text-[11px] tracking-[0.08em] uppercase text-[#606062] hover:text-[#B8B8B2] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] rounded-[2px]"
+                    className="inline-block py-[6px] font-mono text-[11px] tracking-[0.08em] uppercase text-[#606062] hover:text-[#B8B8B2] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] rounded-[2px]"
                   >
                     {label}
                   </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
 
         {/* Bottom — legal */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="font-mono text-[9px] tracking-[0.13em] uppercase text-[#606062]">
+          <p className="font-mono text-[9px] tracking-[0.13em] uppercase text-[#909090]">
             KAIS, a product of Qordova Labs Inc Pte. Ltd., Singapore.
           </p>
           <ul className="flex items-center gap-5">

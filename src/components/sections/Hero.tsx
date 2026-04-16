@@ -26,12 +26,12 @@ export default function Hero({
   primaryCta,
   secondaryCta,
   signals,
-  minHeight = '100svh',
+  minHeight = '92svh',
 }: HeroProps) {
   return (
     <section
       className="relative flex items-center overflow-hidden bg-[#0C0C0D]"
-      style={{ minHeight, padding: 'clamp(100px,12vw,160px) 0 clamp(60px,8vw,100px)' }}
+      style={{ minHeight, padding: 'clamp(72px,9vw,120px) 0 clamp(48px,6vw,80px)' }}
     >
       {/* Grid texture */}
       <div
@@ -74,7 +74,7 @@ export default function Hero({
           <div
             className="inline-flex items-center gap-[14px] font-mono text-[10px] tracking-[0.22em] uppercase text-[#C9A84C]"
             style={{
-              marginBottom: '36px',
+              marginBottom: '22px',
               animation: 'rise .9s cubic-bezier(.16,1,.3,1) .1s both',
             }}
           >
@@ -86,8 +86,8 @@ export default function Hero({
           <h1
             className="font-serif font-light text-[#EFEFEA] leading-[1.04] tracking-[-0.015em]"
             style={{
-              fontSize: 'clamp(52px, 6.5vw, 92px)',
-              marginBottom: '28px',
+              fontSize: 'clamp(48px, 6vw, 84px)',
+              marginBottom: '20px',
               animation: 'rise .95s cubic-bezier(.16,1,.3,1) .22s both',
             }}
           >
@@ -100,7 +100,7 @@ export default function Hero({
             style={{
               fontSize: 'clamp(16px, 1.6vw, 19px)',
               maxWidth: '560px',
-              marginBottom: '48px',
+              marginBottom: '32px',
               animation: 'rise .95s cubic-bezier(.16,1,.3,1) .36s both',
             }}
           >

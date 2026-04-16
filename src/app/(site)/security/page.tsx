@@ -17,7 +17,7 @@ export default function SecurityPage() {
         primaryCta={{ label: 'Discuss Your Security Context', href: '/contact' }}
         secondaryCta={{ label: 'Back to Home', href: '/' }}
         signals={['Access control','Execution boundaries','Audit artifacts','Operational reliability']}
-        minHeight="88svh"
+        minHeight="76svh"
       />
       <section className="section bg-[#111113]">
         <div className="container">

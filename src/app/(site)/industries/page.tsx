@@ -17,7 +17,7 @@ export default function IndustriesPage() {
         primaryCta={{ label: 'Discuss Your Environment', href: '/contact' }}
         secondaryCta={{ label: 'Back to Home', href: '/' }}
         signals={['Financial services','Healthcare','Enterprise operations','Public sector']}
-        minHeight="88svh"
+        minHeight="76svh"
       />
       <section className="section bg-[#111113]">
         <div className="container">
