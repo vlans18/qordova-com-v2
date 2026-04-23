@@ -1,155 +1,206 @@
-// JsonLd — structured data injection for GEO and SEO.
-// Each schema is a separate component.
-// Usage: <JsonLd schema={SCHEMA.breadcrumb.home} />
-// Root layout already injects Organization + WebSite schemas.
-
-interface JsonLdProps {
-  schema: Record<string, unknown>
+﻿interface JsonLdProps {
+  schema?: Record<string, unknown> | null
+  page?: 'home' | string
 }
 
-export default function JsonLd({ schema }: JsonLdProps) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  )
+const HOME_WEBPAGE = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://www.qordova.com/#webpage',
+  url: 'https://www.qordova.com',
+  name: 'Qordova Labs Inc — Governance-First AI Infrastructure',
+  description:
+    'Qordova Labs Inc is the parent company behind KAIS. Governance-first AI infrastructure for enterprises, banks, hospitals, and public-sector environments.',
+  isPartOf: { '@id': 'https://www.qordova.com/#website' },
+  about: { '@id': 'https://www.qordova.com/#organization' },
+  inLanguage: 'en',
 }
 
-// ── Breadcrumb factory ────────────────────────────────────────
+const HOME_FAQ = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is Qordova Labs Inc?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Qordova Labs Inc is a Singapore-incorporated parent company that builds governance-first AI systems for enterprises, banks, hospitals, and public-sector environments. KAIS is its flagship product.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is KAIS?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'KAIS is the execution governance system developed by Qordova Labs Inc. It is designed to control whether AI execution proceeds, under what conditions it proceeds, and what audit obligations follow when it does. KAIS is a product of Qordova, not the whole company identity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Who is Qordova built for?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Qordova builds for enterprises, banks, hospitals, and public-sector environments where informal AI use creates unacceptable risk. The primary audience includes boards, procurement teams, enterprise buyers, regulators, and institutional partners.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does governance-first mean?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Governance-first means that authority, boundaries, and accountability are built into the AI execution path from the start, not added after the fact. AI execution is controlled at the point where action is taken, not reported on after it has occurred.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where is Qordova Labs Inc incorporated?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Qordova Labs Inc Pte. Ltd. is incorporated in Singapore.',
+      },
+    },
+  ],
+}
+
 function breadcrumb(trail: { name: string; href: string }[]) {
   return {
-    '@context':        'https://schema.org',
-    '@type':           'BreadcrumbList',
-    itemListElement:   trail.map((item, i) => ({
-      '@type':    'ListItem',
-      position:   i + 1,
-      name:       item.name,
-      item:       `https://qordova.com${item.href}`,
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      item: `https://www.qordova.com${item.href}`,
     })),
   }
 }
 
-// ── FAQ factory ───────────────────────────────────────────────
 function faqPage(items: { q: string; a: string }[]) {
   return {
-    '@context':    'https://schema.org',
-    '@type':       'FAQPage',
-    mainEntity:    items.map(({ q, a }) => ({
-      '@type':          'Question',
-      name:             q,
-      acceptedAnswer:   { '@type': 'Answer', text: a },
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
     })),
   }
 }
 
-// ── All schemas ───────────────────────────────────────────────
 export const SCHEMA = {
-
-  // Breadcrumbs
   breadcrumb: {
-    home:       breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }]),
-    kais:       breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'KAIS', href: '/kais' }]),
-    solutions:  breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'Solutions', href: '/solutions' }]),
+    home: breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }]),
+    kais: breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'KAIS', href: '/kais' }]),
+    solutions: breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'Solutions', href: '/solutions' }]),
     industries: breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'Industries', href: '/industries' }]),
     governance: breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'Governance', href: '/governance' }]),
-    security:   breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'Security', href: '/security' }]),
-    research:   breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'Research', href: '/research' }]),
-    about:      breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'About', href: '/about' }]),
-    contact:    breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'Contact', href: '/contact' }]),
+    security: breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'Security', href: '/security' }]),
+    research: breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'Research', href: '/research' }]),
+    about: breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'About', href: '/about' }]),
+    contact: breadcrumb([{ name: 'Qordova Labs Inc', href: '/' }, { name: 'Contact', href: '/contact' }]),
   },
 
-  // FAQ — home page
   faq: {
     home: faqPage([
       {
         q: 'What is Qordova Labs Inc?',
-        a: 'Qordova Labs Inc is the parent company. It is incorporated in Singapore as Qordova Labs Inc Pte. Ltd. and builds governed AI infrastructure for enterprise and regulated environments. KAIS is its flagship platform.',
+        a: 'Qordova Labs Inc is a Singapore-incorporated parent company that builds governance-first AI systems for enterprises, banks, hospitals, and public-sector environments. KAIS is its flagship product.',
       },
       {
         q: 'What is KAIS?',
-        a: 'KAIS is the flagship governed AI execution platform of Qordova Labs Inc. It provides permit-bound, fail-closed execution authority through ORION — governing whether AI execution is allowed to proceed, under what conditions, and producing immutable audit evidence.',
+        a: 'KAIS is the execution governance system developed by Qordova Labs Inc. It is designed to control whether AI execution proceeds, under what conditions it proceeds, and what audit obligations follow when it does. KAIS is a product of Qordova, not the whole company identity.',
       },
       {
-        q: 'What is ORION?',
-        a: 'ORION — Orchestrated Reasoning and Intelligence Over Networks — is the control plane authority inside KAIS. It is the sole permit issuer. No ORION permit means no execution.',
+        q: 'Who is Qordova built for?',
+        a: 'Qordova builds for enterprises, banks, hospitals, and public-sector environments where informal AI use creates unacceptable risk. The primary audience includes boards, procurement teams, enterprise buyers, regulators, and institutional partners.',
       },
       {
-        q: 'How is KAIS different from an AI gateway?',
-        a: 'AI gateways focus on request routing, cost controls, and throughput. KAIS centers permit-bound execution governance as its constitutional core. ORION-issued execution authority with fail-closed enforcement and immutable audit obligations is not equivalent to gateway-level interception.',
+        q: 'What does governance-first mean?',
+        a: 'Governance-first means that authority, boundaries, and accountability are built into the AI execution path from the start, not added after the fact. AI execution is controlled at the point where action is taken, not reported on after it has occurred.',
       },
       {
-        q: 'Who is this for?',
-        a: 'Qordova Labs Inc and KAIS serve enterprise and regulated-sector organizations that need AI execution to remain bounded, reviewable, and auditable — including financial services, healthcare, public sector, and multi-provider enterprise environments.',
+        q: 'Where is Qordova Labs Inc incorporated?',
+        a: 'Qordova Labs Inc Pte. Ltd. is incorporated in Singapore.',
       },
     ]),
-
-    // FAQ — kais page
     kais: faqPage([
       {
         q: 'What does fail-closed execution mean in KAIS?',
-        a: 'Fail-closed means that if a valid ORION permit is not present, execution does not proceed. There is no soft fail, no default-allow, and no bypass path. This is the constitutional enforcement posture of KAIS.',
-      },
-      {
-        q: 'What is an immutable audit artifact in KAIS?',
-        a: 'Every execution event in KAIS produces a cryptographically chained, append-only artifact. These artifacts are reconstructible, replayable, and cannot be altered after creation.',
+        a: 'Fail-closed means that if a valid ORION permit is not present, execution does not proceed.',
       },
       {
         q: 'Is KAIS provider-neutral?',
-        a: 'Yes. KAIS governs AI execution across providers without architectural preference or lock-in. ORION enforces policy regardless of which model or execution target is involved.',
-      },
-      {
-        q: 'How does KAIS differ from an AI gateway?',
-        a: 'AI gateways intercept requests and apply routing rules. KAIS centers permit-bound execution governance as its constitutional core. ORION-issued authority with fail-closed enforcement and immutable audit obligations is not equivalent to gateway-level interception.',
+        a: 'Yes. KAIS governs AI execution across providers without architectural preference or lock-in.',
       },
     ]),
-
-    // FAQ — about page
     about: faqPage([
       {
         q: 'Where is Qordova Labs Inc incorporated?',
-        a: 'Qordova Labs Inc is incorporated in Singapore as Qordova Labs Inc Pte. Ltd. UEN: 202615996C. Incorporated 10 April 2026.',
+        a: 'Qordova Labs Inc Pte. Ltd. is incorporated in Singapore.',
       },
       {
         q: 'What does Qordova Labs Inc build?',
-        a: 'Governed AI infrastructure — systems that define how AI work is authorized, constrained, reviewed, and evidenced under explicit operating conditions. Not a model vendor. Not a generic AI wrapper.',
-      },
-      {
-        q: 'What is the relationship between Qordova Labs Inc, KAIS, and ORION?',
-        a: 'Qordova Labs Inc is the parent company. KAIS is the flagship governed AI execution platform. ORION is the control plane authority inside KAIS — the sole permit issuer. No ORION permit means no execution.',
+        a: 'Qordova builds governance-first AI infrastructure and KAIS is its execution governance system.',
       },
     ]),
   },
 
-  // SoftwareApplication — KAIS
   softwareApp: {
     kais: {
-      '@context':          'https://schema.org',
-      '@type':             'SoftwareApplication',
-      '@id':               'https://qordova.com/kais#product',
-      name:                'KAIS',
-      alternateName:       'KAIS — Governed AI Execution Platform',
-      description:         'KAIS is the flagship governed AI execution platform of Qordova Labs Inc. Permit-bound, fail-closed, provider neutral, with immutable audit evidence.',
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      '@id': 'https://www.qordova.com/kais#product',
+      name: 'KAIS',
+      alternateName: 'KAIS — Governed AI Execution Platform',
+      description: 'KAIS is the execution governance system of Qordova Labs Inc. It controls whether AI execution proceeds, under what conditions, and what audit obligations follow.',
       applicationCategory: 'BusinessApplication',
-      operatingSystem:     'Cloud',
-      url:                 'https://qordova.com/kais',
-      publisher:           { '@id': 'https://qordova.com/#organization' },
+      operatingSystem: 'Cloud',
+      url: 'https://www.qordova.com/kais',
+      publisher: { '@id': 'https://www.qordova.com/#organization' },
       offers: {
-        '@type':       'Offer',
-        availability:  'https://schema.org/InStock',
+        '@type': 'Offer',
+        availability: 'https://schema.org/InStock',
         priceCurrency: 'USD',
       },
     },
   },
 
-  // ContactPage
   contactPage: {
-    '@context':   'https://schema.org',
-    '@type':      'ContactPage',
-    '@id':        'https://qordova.com/contact#page',
-    url:          'https://qordova.com/contact',
-    name:         'Contact Qordova Labs Inc',
-    description:  'Request an enterprise briefing or architecture discussion with Qordova Labs Inc.',
-    publisher:    { '@id': 'https://qordova.com/#organization' },
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': 'https://www.qordova.com/contact#page',
+    url: 'https://www.qordova.com/contact',
+    name: 'Contact Qordova Labs Inc',
+    description: 'Request a company briefing or architecture discussion with Qordova Labs Inc.',
+    publisher: { '@id': 'https://www.qordova.com/#organization' },
   },
+}
+
+export default function JsonLd({ schema = null, page }: JsonLdProps) {
+  if (schema) {
+    return (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    )
+  }
+
+  if (page === 'home') {
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_WEBPAGE) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_FAQ) }}
+        />
+      </>
+    )
+  }
+
+  return null
 }
