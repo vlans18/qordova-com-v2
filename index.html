@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- =============================================
+       PRIMARY META
+       RULE: Title ≤ 60 chars. Description 140–160 chars.
+       Both must reflect institutional, not product-demo, framing.
+  ============================================= -->
+  <title>Qordova Labs Inc — Governed AI Infrastructure for Enterprise</title>
+  <meta name="description" content="Qordova Labs Inc builds governance-first AI infrastructure for enterprises, banks, hospitals, and public-sector environments where execution control, audit integrity, and accountability matter." />
+
+  <!-- =============================================
+       CANONICAL
+       RULE: Always set. Prevents duplicate indexing if the
+       page is served under multiple paths or protocols.
+       Update to match the actual production domain.
+  ============================================= -->
+  <link rel="canonical" href="https://www.qordova.com/" />
+
+  <!-- =============================================
+       ROBOTS
+       RULE: index, follow on production.
+       Change to noindex while the domain is staging/private.
+  ============================================= -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- =============================================
+       OPEN GRAPH — controls appearance in LinkedIn,
+       Slack, WhatsApp, and other social/messaging previews.
+       RULE: og:image must be 1200×630 px, served over HTTPS.
+       Replace /og-image.png with the actual asset path.
+  ============================================= -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Qordova Labs Inc" />
+  <meta property="og:url"         content="https://www.qordova.com/" />
+  <meta property="og:title"       content="Qordova Labs Inc — Governed AI Infrastructure for Enterprise" />
+  <meta property="og:description" content="Governance-first AI infrastructure for enterprises, banks, hospitals, and public-sector environments where execution control, audit integrity, and accountability matter from the start." />
+  <meta property="og:image"       content="https://www.qordova.com/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"      content="en_SG" />
+
+  <!-- =============================================
+       TWITTER / X CARD
+       RULE: summary_large_image is correct for institutional pages.
+       Replace twitter:site handle when account exists.
+  ============================================= -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Qordova Labs Inc — Governed AI Infrastructure for Enterprise" />
+  <meta name="twitter:description" content="Governance-first AI infrastructure for enterprises, banks, hospitals, and public-sector environments where execution control, audit integrity, and accountability matter from the start." />
+  <meta name="twitter:image"       content="https://www.qordova.com/og-image.png" />
+  <!-- <meta name="twitter:site" content="@qordovalabs" /> -->
+
+  <!-- =============================================
+       FAVICON + APP ICONS
+       RULE: Supply all three sizes. SVG favicon is preferred
+       for modern browsers; PNG fallback for legacy.
+       Replace placeholder paths with real assets before publish.
+  ============================================= -->
+  <link rel="icon"             href="/favicon.ico"          sizes="any" />
+  <link rel="icon"             href="/favicon.svg"          type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+  <link rel="manifest"         href="/site.webmanifest" />
+
+  <!-- =============================================
+       STRUCTURED DATA — Organization schema
+       RULE: Helps search engines and AI answer engines
+       understand the entity: name, URL, founding location,
+       and relationship to KAIS.
+       sameAs: add LinkedIn, Crunchbase when available.
+  ============================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Qordova Labs Inc",
+    "legalName": "Qordova Labs Inc Pte. Ltd.",
+    "url": "https://www.qordova.com",
+    "logo": "https://www.qordova.com/favicon.svg",
+    "foundingLocation": {
+      "@type": "Place",
+      "addressCountry": "SG",
+      "name": "Singapore"
+    },
+    "description": "Qordova Labs Inc builds governance-first AI infrastructure for enterprises, banks, hospitals, and public-sector environments where execution control, audit integrity, and accountability matter from the start.",
+    "hasProduct": {
+      "@type": "SoftwareApplication",
+      "name": "KAIS",
+      "alternateName": "Kodana AI Suite",
+      "applicationCategory": "BusinessApplication",
+      "url": "https://www.kodana.dev",
+      "description": "KAIS is the execution governance system of Qordova Labs Inc. It controls whether AI execution proceeds, under what conditions, and what audit obligations follow."
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "enquiry@qordova.com",
+      "contactType": "Enterprise Enquiries"
+    }
+  }
+  </script>
+
+  <!-- =============================================
+       WEBPAGE STRUCTURED DATA
+       RULE: Reinforces the page-level entity for search
+       and generative engine understanding.
+  ============================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Qordova Labs Inc — Governed AI Infrastructure for Enterprise",
+    "url": "https://www.qordova.com/",
+    "description": "Qordova Labs Inc is the parent company behind KAIS. This page describes the company, its governance-first direction, and the institutional relationship between Qordova and its KAIS execution governance system.",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Qordova Labs Inc",
+      "url": "https://www.qordova.com"
+    }
+  }
+  </script>
+
+  <!-- =============================================
+       FONT LOADING
+       RULE: preconnect before stylesheet call.
+       display=swap avoids invisible text on slow connections.
+  ============================================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       TOKENS
+    ============================================= */
+    :root {
+      /* Visual refinement pass — brass-gold token set */
+      --black:       #070809;
+      --surface:     #0b0d10;
+      --surface-2:   #101316;
+      --surface-3:   #151a1e;
+      --border:      rgba(255,255,255,0.08);
+      --border-mid:  rgba(255,255,255,0.12);
+      --text-primary:   #ece8df;
+      --text-secondary: #aca69e;
+      --text-muted:     #736d66;
+      --accent:      #c3a34a;
+      --accent-dim:  rgba(195,163,74,0.12);
+      --accent-line: rgba(195,163,74,0.32);
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'DM Sans', system-ui, sans-serif;
+
+      --max-w: 1120px;
+      --section-pad: 7rem 2rem;
+      --section-pad-sm: 4rem 1.25rem;
+    }
+
+    /* =============================================
+       RESET + BASE
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    img, svg { display: block; max-width: 100%; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* =============================================
+       LAYOUT UTILITIES
+    ============================================= */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 1.25rem; }
+    }
+
+    .section {
+      padding: var(--section-pad);
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: var(--section-pad-sm); }
+    }
+
+    /* =============================================
+       TYPOGRAPHY
+    ============================================= */
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+
+    h1 em, .accent-word {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--text-primary);
+    }
+
+    h3 {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      max-width: 64ch;
+    }
+
+    p + p { margin-top: 1.2rem; }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.75rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #070809;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: #d4b255;
+      border-color: #d4b255;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-mid);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-line);
+      color: var(--text-primary);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+
+    /* =============================================
+       HEADER / NAV
+    ============================================= */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(7,8,9,0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    .logo-mark {
+      width: 28px;
+      height: 28px;
+      border: 1.5px solid var(--accent-line);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-mark svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .logo-wordmark {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--text-secondary);
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-link:hover { color: var(--text-primary); }
+
+    .nav-link.active {
+      color: var(--text-primary);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-briefing {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-line);
+      padding: 0.45rem 1rem;
+      border-radius: 2px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-briefing:hover {
+      background: var(--accent-dim);
+      color: var(--accent);
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text-secondary);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 1.25rem 2rem;
+      gap: 0.25rem;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav-link {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s ease;
+    }
+
+    .mobile-nav-link:hover { color: var(--text-primary); }
+
+    .mobile-nav .btn-primary {
+      margin-top: 1.25rem;
+      justify-content: center;
+    }
+
+    @media (max-width: 900px) {
+      .site-nav { display: none; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+    }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    #hero {
+      padding: 11rem 2rem 7rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Subtle horizontal rule texture */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 47px,
+        rgba(255,255,255,0.018) 47px,
+        rgba(255,255,255,0.018) 48px
+      );
+    }
+
+    /* Gold top-left accent */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 480px; height: 380px;
+      background: radial-gradient(ellipse at top left, rgba(201,168,76,0.05) 0%, transparent 65%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline {
+      max-width: 20ch;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      max-width: 58ch;
+    }
+
+    .hero-trust {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+
+    .hero-trust strong {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    @media (max-width: 640px) {
+      #hero { padding: 8rem 1.25rem 5rem; }
+    }
+
+    /* =============================================
+       SECTION DIVIDER
+    ============================================= */
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      border: none;
+    }
+
+    .section-rule-accent {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, rgba(201,168,76,0.38), transparent 60%);
+      border: none;
+    }
+
+    /* =============================================
+       STANDARD SECTION BLOCK
+    ============================================= */
+    .section-block {
+      padding: var(--section-pad);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .section-block { padding: var(--section-pad-sm); }
+    }
+
+    .section-label {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-label h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .section-body h2 {
+      margin-bottom: 1.75rem;
+    }
+
+    /* =============================================
+       ALTERNATING SECTION BACKGROUNDS
+    ============================================= */
+    .section-alt {
+      background: var(--surface-2);
+    }
+
+    .section-alt-2 {
+      background: var(--surface-3);
+    }
+
+    /* =============================================
+       KAIS BRIDGE BLOCK (Section 4)
+    ============================================= */
+    .kais-bridge {
+      padding: var(--section-pad);
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+    }
+
+    @media (max-width: 768px) {
+      .kais-bridge { padding: var(--section-pad-sm); }
+    }
+
+    .kais-bridge-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .kais-bridge-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .kais-tag {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-line);
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    .kais-bridge-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      padding-top: 1.5rem;
+    }
+
+    .kais-bridge-right p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .kais-bridge-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* =============================================
+       PRINCIPLES (Section 5)
+    ============================================= */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 3rem;
+      border: 1px solid var(--border);
+    }
+
+    .principle-item {
+      padding: 2rem 1.75rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .principle-item:nth-child(3n) { border-right: none; }
+    .principle-item:nth-last-child(-n+3) { border-bottom: none; }
+
+    .principle-num {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--accent);
+      opacity: 0.5;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .principle-title {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .principle-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      .principles-grid { grid-template-columns: repeat(2, 1fr); }
+      .principle-item:nth-child(3n) { border-right: 1px solid var(--border); }
+      .principle-item:nth-child(2n) { border-right: none; }
+      .principle-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+      .principle-item:nth-last-child(-n+2) { border-bottom: none; }
+    }
+
+    @media (max-width: 540px) {
+      .principles-grid { grid-template-columns: 1fr; }
+      .principle-item { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+      .principle-item:last-child { border-bottom: none !important; }
+    }
+
+    /* =============================================
+       ENVIRONMENTS (Section 6)
+    ============================================= */
+    .environments-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 3rem;
+    }
+
+    .env-item {
+      padding: 2rem 1.5rem;
+      border: 1px solid var(--border);
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .env-item:last-child { border-right: 1px solid var(--border); }
+
+    .env-icon {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border-mid);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .env-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .env-name {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .env-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      .environments-list { grid-template-columns: repeat(2, 1fr); }
+      .env-item { border-right: none; border-bottom: none; }
+      .env-item:nth-child(2n) { border-right: 1px solid var(--border); }
+      .environments-list { border: 1px solid var(--border); }
+      .env-item { border: none; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+      .env-item:nth-child(2n) { border-right: none; }
+      .env-item:nth-child(3), .env-item:nth-child(4) { border-bottom: none; }
+    }
+
+    @media (max-width: 540px) {
+      .environments-list { grid-template-columns: 1fr; border: 1px solid var(--border); }
+      .env-item { border: none; border-bottom: 1px solid var(--border) !important; }
+      .env-item:last-child { border-bottom: none !important; }
+    }
+
+    /* =============================================
+       COMPANY (Section 7)
+    ============================================= */
+    .company-block {
+      padding: var(--section-pad);
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+    }
+
+    @media (max-width: 768px) {
+      .company-block { padding: var(--section-pad-sm); }
+    }
+
+    .company-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .company-provenance-text {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      max-width: 100%;
+    }
+
+    .company-provenance-text::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c3a34a;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    .company-right {
+      padding-top: 0.5rem;
+    }
+
+    .company-right p {
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .company-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    /* =============================================
+       FINAL CTA (Section 8)
+    ============================================= */
+    .final-cta {
+      padding: var(--section-pad);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse at top center, rgba(201,168,76,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .final-cta { padding: var(--section-pad-sm); }
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .final-cta h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .final-cta p {
+      margin: 0 auto 0;
+      max-width: 56ch;
+    }
+
+    .final-cta .cta-row {
+      justify-content: center;
+    }
+
+    .cta-note {
+      margin-top: 1.75rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .site-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 4rem 2rem 2.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .site-footer { padding: 3rem 1.25rem 2rem; }
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .footer-brand h4 {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 48ch;
+    }
+
+    .footer-brand .footer-cta {
+      margin-top: 1.75rem;
+    }
+
+    .footer-nav h5 {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-nav a {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav a:hover { color: var(--text-primary); }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-relationship {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-relationship strong {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal a {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      transition: color 0.15s ease;
+    }
+
+    .footer-legal a:hover { color: var(--text-secondary); }
+
+    .footer-optional-note {
+      width: 100%;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      font-style: italic;
+    }
+
+    /* =============================================
+       SUBTLE ENTRANCE ANIMATION
+       (CSS only, no library dependency)
+    ============================================= */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 0.55s ease, transform 0.55s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================
+       HEADER
+  ============================================= -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+
+      <a href="/" class="site-logo" aria-label="Qordova Labs Inc — Home">
+        <div class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" y="1.5" width="11" height="11" rx="1" stroke="#c3a34a" stroke-width="1.2" fill="none"/>
+            <rect x="4.5" y="4.5" width="5" height="5" rx="0.5" fill="#c3a34a" fill-opacity="0.45"/>
+          </svg>
+        </div>
+        <span class="logo-wordmark">Qordova Labs</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#hero"           class="nav-link active">Home</a>
+        <a href="#why-qordova"    class="nav-link">Why Qordova</a>
+        <a href="#what-we-build"  class="nav-link">What We Build</a>
+        <a href="#kais"           class="nav-link">KAIS</a>
+        <a href="#briefing"       class="nav-link">Institutional Briefing</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="#briefing" class="nav-briefing">Request Company Briefing</a>
+      </div>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#hero"           class="mobile-nav-link" onclick="closeMobileNav()">Home</a>
+      <a href="#why-qordova"    class="mobile-nav-link" onclick="closeMobileNav()">Why Qordova</a>
+      <a href="#what-we-build"  class="mobile-nav-link" onclick="closeMobileNav()">What We Build</a>
+      <a href="#kais"           class="mobile-nav-link" onclick="closeMobileNav()">KAIS</a>
+      <a href="#briefing"       class="mobile-nav-link" onclick="closeMobileNav()">Institutional Briefing</a>
+      <a href="#briefing" class="btn btn-primary" onclick="closeMobileNav()">Request Company Briefing</a>
+    </nav>
+  </header>
+
+
+  <!-- =============================================
+       HERO — SECTION 0
+  ============================================= -->
+  <section id="hero" aria-labelledby="hero-headline">
+
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+
+      <p class="eyebrow hero-eyebrow">Governance-first AI infrastructure</p>
+
+      <h1 id="hero-headline" class="hero-headline">
+        Governed AI, built for institutions that <em class="accent-word">cannot afford</em> ambiguity
+      </h1>
+
+      <p class="hero-sub">
+        Qordova builds governance-first AI systems for enterprises, banks, hospitals, and public-sector environments where execution control, audit integrity, and accountability matter from the start.
+      </p>
+
+      <div class="cta-row">
+        <a href="#briefing" class="btn btn-primary">Request Company Briefing</a>
+        <a href="https://www.kodana.dev" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View KAIS Architecture</a>
+      </div>
+
+      <p class="hero-trust">
+        <strong>KAIS</strong> is Qordova&#8217;s execution governance system for controlled, auditable AI operations.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SECTION 1 — WHY GOVERNED AI MATTERS
+  ============================================= -->
+  <section id="why-qordova" class="section-block fade-in" aria-labelledby="s1-heading">
+    <div class="container">
+
+      <div class="section-label">
+        <h3>01 — Context</h3>
+      </div>
+
+      <div class="section-body">
+        <h2 id="s1-heading">Why governed AI matters now</h2>
+        <p>
+          AI capability is advancing faster than institutional control. In serious environments, the challenge is no longer simple access to models. The real challenge is whether AI execution happens under authority, within defined boundaries, and with evidence that can withstand scrutiny.
+        </p>
+        <p>
+          Many organizations already have AI activity in motion. Far fewer can show that usage is governed at the point where action is taken. That gap is where operational risk, audit weakness, and trust failure begin.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SECTION 2 — WHAT QORDOVA BUILDS
+  ============================================= -->
+  <section id="what-we-build" class="section-block section-alt fade-in" aria-labelledby="s2-heading">
+    <div class="container">
+
+      <div class="section-label">
+        <h3>02 — Direction</h3>
+      </div>
+
+      <div class="section-body">
+        <h2 id="s2-heading">What Qordova builds</h2>
+        <p>
+          Qordova builds governance-first AI systems designed to make AI use operationally controllable, auditable, and fit for high-accountability environments. Our focus is the layer between intent and execution, where organizational trust is either preserved or lost.
+        </p>
+        <p>
+          This is not a company built around novelty for its own sake. It is built around the practical requirements that serious institutions face when AI moves from experimentation into real operations.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SECTION 3 — FROM INFORMAL USE TO GOVERNED OPERATION
+  ============================================= -->
+  <section id="governed-operation" class="section-block fade-in" aria-labelledby="s3-heading">
+    <div class="container">
+
+      <div class="section-label">
+        <h3>03 — Operating shift</h3>
+      </div>
+
+      <div class="section-body">
+        <h2 id="s3-heading">From informal AI use to governed operation</h2>
+        <p>
+          Most organizations do not begin with a fully governed AI environment. They begin with scattered usage, uneven oversight, and rising pressure to move faster without losing control.
+        </p>
+        <p>
+          Qordova exists to help close that gap. The objective is to move AI from informal or fragmented use toward governed operational deployment, where authority, boundaries, and accountability are built into the execution path rather than added after the fact.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SECTION 4 — KAIS BRIDGE
+  ============================================= -->
+  <section id="kais" class="kais-bridge fade-in" aria-labelledby="s4-heading">
+    <div class="container">
+
+      <div class="kais-bridge-inner">
+
+        <div class="kais-bridge-left">
+          <div class="kais-bridge-label">
+            <span class="kais-tag">KAIS</span>
+          </div>
+          <div class="section-label" style="margin-bottom:1.5rem;">
+            <h3>04 — The system</h3>
+          </div>
+          <h2 id="s4-heading">KAIS, the operational system behind the thesis</h2>
+        </div>
+
+        <div class="kais-bridge-right">
+          <p>
+            KAIS is Qordova&#8217;s execution governance system. It is designed to control whether AI execution proceeds, under what conditions it proceeds, and what audit obligations follow when it does.
+          </p>
+          <p>
+            In other words, Qordova is the institutional layer, and KAIS is the operational system through which that governance becomes real. The company defines the direction. The system carries that direction into controlled execution.
+          </p>
+          <div>
+            <a href="https://www.kodana.dev" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">See how KAIS works</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SECTION 5 — PRINCIPLES
+  ============================================= -->
+  <section id="principles" class="section-block section-alt-2 fade-in" aria-labelledby="s5-heading">
+    <div class="container">
+
+      <div class="section-label">
+        <h3>05 — Operating principles</h3>
+      </div>
+
+      <div class="section-body">
+        <h2 id="s5-heading">Built on a small set of non-negotiable principles</h2>
+        <p>
+          Qordova&#8217;s approach is grounded in a small number of operating principles: controlled execution, fail-closed behavior, auditable operations, provider-neutral deployment, and accountability at the point where action is taken.
+        </p>
+        <p>
+          These are not styling choices or marketing phrases. They are operating requirements for any institution that expects AI use to hold up under internal review, external scrutiny, or real operational pressure.
+        </p>
+      </div>
+
+      <div class="principles-grid" role="list">
+
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">I</span>
+          <p class="principle-title">Controlled execution</p>
+          <p class="principle-desc">AI execution proceeds only where it is explicitly authorized. Authority precedes action.</p>
+        </div>
+
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">II</span>
+          <p class="principle-title">Fail-closed behaviour</p>
+          <p class="principle-desc">Ambiguity resolves to denial. Systems that default to permitting unverified requests are not governance systems.</p>
+        </div>
+
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">III</span>
+          <p class="principle-title">Auditable operations</p>
+          <p class="principle-desc">Every decision produces evidence. Audit integrity is a design requirement, not a reporting function.</p>
+        </div>
+
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">IV</span>
+          <p class="principle-title">Provider-neutral deployment</p>
+          <p class="principle-desc">Governance is independent of which model or provider is engaged. The control plane does not change with the model.</p>
+        </div>
+
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">V</span>
+          <p class="principle-title">Accountability at the point of action</p>
+          <p class="principle-desc">Governance applied after the fact is a history record. Governance applied at execution is operational accountability.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SECTION 6 — SERIOUS ENVIRONMENTS
+  ============================================= -->
+  <section id="serious-environments" class="section-block fade-in" aria-labelledby="s6-heading">
+    <div class="container">
+
+      <div class="section-label">
+        <h3>06 — Who this is for</h3>
+      </div>
+
+      <div class="section-body">
+        <h2 id="s6-heading">Built for serious environments</h2>
+        <p>
+          Qordova&#8217;s direction is aimed at organizations where informal AI use creates unacceptable risk, including enterprise, healthcare, financial, and public-sector settings.
+        </p>
+        <p>
+          The objective is not to create another layer of AI enthusiasm. The objective is to create a governance layer that makes adoption safer, more controlled, and more credible when stakes are high.
+        </p>
+      </div>
+
+      <div class="environments-list" role="list">
+
+        <div class="env-item" role="listitem">
+          <div class="env-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="7" width="12" height="8" rx="1"/>
+              <path d="M5 7V5a3 3 0 016 0v2"/>
+            </svg>
+          </div>
+          <p class="env-name">Financial Services</p>
+          <p class="env-desc">Regulated banking, asset management, and insurance environments with high audit and accountability obligations.</p>
+        </div>
+
+        <div class="env-item" role="listitem">
+          <div class="env-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 2l1.5 4.5H14l-3.75 2.73 1.43 4.39L8 11l-3.68 2.62 1.43-4.39L2 6.5h4.5z"/>
+            </svg>
+          </div>
+          <p class="env-name">Healthcare</p>
+          <p class="env-desc">Clinical, administrative, and operational environments where data governance and decision accountability are non-negotiable.</p>
+        </div>
+
+        <div class="env-item" role="listitem">
+          <div class="env-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1L2 5v9h4V9h4v5h4V5z"/>
+            </svg>
+          </div>
+          <p class="env-name">Public Sector</p>
+          <p class="env-desc">Government, regulatory, and public-interest environments where trust, sovereignty, and public accountability are foundational.</p>
+        </div>
+
+        <div class="env-item" role="listitem">
+          <div class="env-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="6"/>
+              <path d="M8 4v4l3 2"/>
+            </svg>
+          </div>
+          <p class="env-name">Enterprise</p>
+          <p class="env-desc">Multi-team, multi-provider enterprise environments where AI usage is expanding and governance must scale with it.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SECTION 7 — THE COMPANY
+  ============================================= -->
+  <section id="company" class="company-block fade-in" aria-labelledby="s7-heading">
+    <div class="container">
+
+      <div class="company-inner">
+
+        <div class="company-left">
+          <div class="section-label" style="margin-bottom:1.5rem;">
+            <h3>07 — The institution</h3>
+          </div>
+          <h2 id="s7-heading">The company behind the system matters</h2>
+          <p class="company-provenance-text">Qordova Labs Inc Pte. Ltd. is incorporated in Singapore.</p>
+        </div>
+
+        <div class="company-right">
+          <p>
+            Systems that govern execution must themselves be trusted. That is why the institutional layer matters.
+          </p>
+          <p>
+            Qordova Labs Inc is the parent company behind KAIS. The company exists to build durable governance infrastructure for AI deployment, not short-lived wrappers around changing model cycles. The role of the company is to provide direction, continuity, and a serious trust foundation behind the systems it brings forward.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SECTION 8 — FINAL CTA
+  ============================================= -->
+  <section id="briefing" class="final-cta fade-in" aria-labelledby="s8-heading">
+    <div class="final-cta-inner">
+
+      <p class="eyebrow" style="margin-bottom:1.5rem;">Where to begin</p>
+
+      <h2 id="s8-heading">Start with the institution, then inspect the system</h2>
+
+      <p>
+        If you are evaluating strategic fit, institutional credibility, governance direction, or partnership potential, start with Qordova. If you need to inspect the technical control model behind that direction, continue into KAIS architecture.
+      </p>
+
+      <div class="cta-row">
+        <a href="mailto:enquiry@qordova.com?subject=Company%20Briefing%20Request&body=Organisation%3A%0ARole%3A%0AMessage%3A" class="btn btn-primary">Request Company Briefing</a>
+        <a href="https://www.kodana.dev" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View KAIS Architecture</a>
+      </div>
+
+      <p class="cta-note">Engagements are structured and scoped. Not self-serve.</p>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <!-- ROUTING RULE (locked):
+       All links to kodana.dev open in a new tab (target="_blank" rel="noopener noreferrer").
+       This is intentional and consistent across all Qordova pages.
+       Qordova → Kodana is always an external transition, never an in-page navigation.
+  -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <h4>Qordova Labs Inc</h4>
+          <p>
+            Qordova builds governance-first AI systems for environments where execution control, audit integrity, and accountability cannot be optional.
+          </p>
+          <div class="footer-cta">
+            <a href="mailto:enquiry@qordova.com?subject=Company%20Briefing%20Request&body=Organisation%3A%0ARole%3A%0AMessage%3A" class="btn btn-primary">Request Company Briefing</a>
+          </div>
+        </div>
+
+        <div class="footer-nav" aria-label="Footer navigation">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#hero">Company Overview</a></li>
+            <li><a href="https://www.kodana.dev" target="_blank" rel="noopener noreferrer">KAIS Architecture</a></li>
+            <li><a href="mailto:enquiry@qordova.com">Contact</a></li>
+            <li><a href="/legal">Legal</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-relationship">
+          <strong>KAIS</strong> is a product of Qordova Labs Inc Pte. Ltd., Singapore.
+        </p>
+        <nav class="footer-legal" aria-label="Legal links">
+          <a href="/legal">Legal</a>
+        </nav>
+      </div>
+
+      <p class="footer-optional-note">
+        Start with the institution. Continue into the system when technical inspection is needed.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- =============================================
+       JAVASCRIPT — NAV + SCROLL REVEAL
+       (no external dependencies)
+  ============================================= -->
+  <script>
+    // ---- Mobile nav toggle ----
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.classList.toggle('open', !expanded);
+    });
+
+    function closeMobileNav() {
+      toggle.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+    }
+
+    // ---- Scroll reveal ----
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    } else {
+      // Fallback: make all visible immediately
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    }
+
+    // ---- Active nav link on scroll ----
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(s => navObserver.observe(s));
+  </script>
+
+</body>
+</html>
